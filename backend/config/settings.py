@@ -1,24 +1,16 @@
-"""
-
-"""
-
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
-
-
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-5--%x!ix6aee7l-ef0=05uu)b5p(5#+t+r26yyz!jv+nauddgc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
 
 
 INSTALLED_APPS = [
@@ -61,10 +53,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
-
-
-
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -75,7 +63,6 @@ DATABASES = {
         "PORT": os.environ.get("POSTGRES_PORT", "5432"),
     }
 }
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -104,10 +91,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-
-
 STATIC_URL = 'static/'
-
 
 
 MAILERS = {
