@@ -42,10 +42,6 @@ next-env.d.ts
 node_modules/
 .next/
 frontend/out
-venv/
-.venv/
-__pycache__/
-*.pyc
 .env
 .env*.local
 firebase-debug.log
