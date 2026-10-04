@@ -6,11 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "test": "jest",
-    "build:static": "cross-env STATIC_EXPORT=true next build"
-  },
-  "dependencies": {
+    "lint": "eslint .",
+    "test": "vitest run",
+    "build:static": "cross-env STATIC_EXPORT=true next build",
+    "build:emulator": "cross-env STATIC_EXPORT=true NEXT_PUBLIC_DATA_SOURCE=firestore NEXT_PUBLIC_USE_EMULATOR=true next build",
+    "build:cloud": "cross-env STATIC_EXPORT=true NEXT_PUBLIC_DATA_SOURCE=firestore NEXT_PUBLIC_USE_EMULATOR=false next build",
     "next": "16.3.6",
     "react": "19.2.8",
     "react-dom": "19.2.8"
@@ -29,5 +29,8 @@
     "jest-environment-jsdom": "^30.5.2",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "dependencies": {
+    "firebase": "^12.19.0"
   }
 }

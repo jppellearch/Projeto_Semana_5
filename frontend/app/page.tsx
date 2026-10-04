@@ -1,21 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
-const apiBase = process.env.NEXT_PUBLIC_API_URL || '';
+import { fetchItems } from '../lib/dataSource';
 
 export default function Home() {
   const [data, setData] = useState({ loading: true, status: '', items: [], error: false });
 
   useEffect(() => {
     let active = true;
-    fetch(`${apiBase}/api/health/`, { cache: 'no-store' })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Erro na API: ${res.status}`);
-        }
-        return res.json();
-      })
+    fetchItems()
       .then((res) => {
         if (active) {
           setData({ loading: false, status: res.status, items: res.items, error: false });
