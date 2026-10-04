@@ -17,3 +17,11 @@ nginx/certs/
 
 .vscode/
 .DS_Store
+
+.env*.local
+firebase-debug.log
+*-debug.log
+.firebase/
+*-firebase-adminsdk-*.json
+serviceAccount*.json
+frontend/out
